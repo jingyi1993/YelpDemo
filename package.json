@@ -1,0 +1,7 @@
+{
+  "name": "rails_demo",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
