@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<% if @restaurant.image_url.present? %>
+  <%= image_tag @restaurant.image_url %>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>
