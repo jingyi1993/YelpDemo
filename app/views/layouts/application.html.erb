@@ -6,14 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('ma_s_photo.jpg') %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
-    <div class="container-fluid">
+    <div class="container-fluid main-page">
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>
