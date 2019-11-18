@@ -3,5 +3,12 @@ Rails.application.routes.draw do
   resources :restaurants
   get 'pages/about'
   get 'pages/contact'
-  root 'restaurants#index'
+  devise_scope :user do
+    authenticated :user do
+      root 'restaurants#index', as: :authenticated_root
+    end
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
 end
