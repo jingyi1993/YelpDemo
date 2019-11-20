@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light">
+  <% @current_user = current_user %>
   <div class="container-fluid">
     <%= link_to "Yelp Demo", restaurants_path, class: "navbar-brand" %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -16,6 +17,7 @@
        </form>
        <ul class="navbar-nav pull-right">
          <% if user_signed_in? %>
+           <li class="nav-item"><%= @current_user.email %></li>
            <li class="nav-item"><%= link_to "Edit user", edit_user_registration_path, class: "nav-link" %></li>
            <li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
          <% else %>
