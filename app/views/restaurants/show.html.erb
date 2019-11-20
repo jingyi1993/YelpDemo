@@ -24,7 +24,9 @@
 
 <div>
   <%= link_to 'Add New Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+  <%= render 'review_list', restaurant: @restaurant %>
 </div>
+
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

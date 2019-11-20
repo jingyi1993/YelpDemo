@@ -1,0 +1,17 @@
+
+<table class="table">
+  <thead>
+    <tr class="form-group">
+      <th>Rating:</th>
+      <th>Comment:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurant&.reviews&.to_a&.each do |review| %>
+      <tr class="form-group">
+        <td><%= review.rating %></td>
+        <td><%= review.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
