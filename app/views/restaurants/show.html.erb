@@ -22,8 +22,11 @@
   <%= @restaurant.website %>
 </p>
 
-<div>
+<div class="float-right">
   <%= link_to 'Add New Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
+</div>
+
+<div>
   <%= render 'review_list', restaurant: @restaurant %>
 </div>
 
