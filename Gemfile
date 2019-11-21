@@ -19,6 +19,7 @@ gem "fog-aws"
 gem "figaro"
 gem 'mini_magick'
 gem 'devise'
+gem 'jquery-rails'
 
 
 group :development, :test do

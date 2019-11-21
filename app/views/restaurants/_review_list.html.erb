@@ -1,5 +1,8 @@
 
 <table class="table">
+  <% if @restaurant.reviews.blank? %>
+    <p>There is no reviews yet, leave a review?</p>
+  <% else %>
   <thead>
     <tr class="form-group">
       <th>Rating:</th>
@@ -7,11 +10,23 @@
     </tr>
   </thead>
   <tbody>
-    <% @restaurant&.reviews&.to_a&.each do |review| %>
+    <% @restaurant&.reviews&.to_a&.each.with_index do |review, index| %>
       <tr class="form-group">
-        <td><%= review.rating %></td>
+        <td class="star" data-score=<%= review.rating %>>(<%= review.rating %>)</td>
         <td><%= review.comment %></td>
       </tr>
     <% end %>
   </tbody>
+  <% end %>
 </table>
+
+<script type="text/javascript">
+
+  $('td.star').raty({
+  path: 'https://awsmaggie.s3.ca-central-1.amazonaws.com/stars',
+  readOnly: true,
+  score: function(){
+    return $(this).attr('data-score')
+  }
+});
+</script>
