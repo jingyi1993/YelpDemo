@@ -1,26 +1,34 @@
 <p id="notice"><%= notice %></p>
-<% if @restaurant.image_url.present? %>
-  <%= image_tag @restaurant.image_url %>
-<% end %>
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
+<div class="row container">
+  <div class="col-md-5">
+    <% if @restaurant.image_url.present? %>
+      <%= image_tag @restaurant.image_url %>
+    <% end %>
+  </div>
+  <div class="col-md-7">
+    <p>
+      <strong>Name:</strong>
+      <%= @restaurant.name %>
+    </p>
+    <p class="star" data-score=<%= @avg_rating %>></p>
+    <p><%="#{@reviews&.length} reviews"%></p>
+    <p>
+      <strong>Address:</strong>
+      <%= @restaurant.address %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @restaurant.phone %>
+    </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @restaurant.website %>
-</p>
+    <p>
+      <strong>Website:</strong>
+      <%= @restaurant.website %>
+    </p>
+  </div>
+</div>
 
 <div class="float-right">
   <%= link_to 'Add New Review', new_restaurant_review_path(@restaurant), class:"btn btn-primary" %>
@@ -33,3 +41,14 @@
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
+
+<script type="text/javascript">
+
+  $('.star').raty({
+  path: 'https://awsmaggie.s3.ca-central-1.amazonaws.com/stars',
+  readOnly: true,
+  score: function(){
+    return $(this).attr('data-score')
+  }
+});
+</script>
