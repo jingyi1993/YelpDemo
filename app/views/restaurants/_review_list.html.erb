@@ -1,6 +1,4 @@
-<tr>
-  <td class="star" data-score=<%= @avg_rating %>></td>
-</tr>
+
 <table class="table">
   <% if @restaurant.reviews.blank? %>
     <p>There is no reviews yet, leave a review?</p>
@@ -12,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @restaurant&.reviews&.to_a&.each.with_index do |review, index| %>
+    <% @restaurant&.reviews&.order("created_at DESC").each do |review| %>
       <tr class="form-group">
         <td class="star" data-score=<%= review.rating %>>(<%= review.rating %>)</td>
         <td><%= review.comment %></td>
