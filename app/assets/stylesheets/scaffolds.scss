@@ -6,6 +6,11 @@
   background-position: 50%;
   background-size: cover;
   height: 500px;
+  .container-fluid {
+    margin-left: 100px;
+    position: relative;
+    top: 40%;
+  }
   h1 {
     position: relative;
     left: 40%;
