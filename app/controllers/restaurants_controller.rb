@@ -7,6 +7,14 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+  def search
+    if params[:search].present?
+      @restaurants = Restaurant.search(params[:search])
+    else
+      @restaurants = Restaurant.all
+    end
+  end
+
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show

@@ -20,7 +20,7 @@ gem "figaro"
 gem 'mini_magick'
 gem 'devise'
 gem 'jquery-rails'
-
+gem 'searchkick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
