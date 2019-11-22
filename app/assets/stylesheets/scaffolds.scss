@@ -55,3 +55,12 @@
   position: relative;
   bottom: 0;
 }
+
+.dropdown-menu {
+  a {
+    transition: background-color 2s ease
+  }
+  a:hover {
+    background-color: grey;
+  }
+}

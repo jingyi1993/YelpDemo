@@ -17,23 +17,19 @@
        </form>
        <ul class="navbar-nav pull-right">
          <% if user_signed_in? %>
-         <!-- Example split danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger">Action</button>
-  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
-  </div>
-</div>
-
-           <!-- <li class="nav-item"></li>
-           <li class="nav-item"></li> -->
+         <div class="dropdown">
+            <a class="btn dropdown-toggle" id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            style="font-weight: bold; color: white">
+              <%= "Hi, #{@current_user.fullname}" %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item"><%= link_to "Edit user", edit_user_registration_path, class: "nav-link" %></a>
+              <a class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %></a>
+            </div>
+         </div>
          <% else %>
            <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: "nav-link" %></li>
            <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></li>
