@@ -1,9 +1,31 @@
-.jumbotron {
-  background-color: #fdf8e1;
+.jumbotron-plus {
+  margin-bottom: 2rem;
+  background-color: #9a938b;
+  border-radius: .3rem;
   border: 1px solid #f2cb3b;
+  background-position: 50%;
+  background-size: cover;
+  height: 500px;
+  h1 {
+    position: relative;
+    left: 40%;
+    top: 10px;
+    font-family: 'fantasy';
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  }
   h5 {
-    color: #c41200;
+    color: white;
+    text-align: center;
+    position: relative;
     font-weight: bold;
+    top: 20%;
+  }
+  h6 {
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 40%;
+    font-family: monospace;
   }
 }
 
