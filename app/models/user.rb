@@ -7,6 +7,12 @@ class User < ApplicationRecord
 
 
   def fullname
-    self[:first_name] +  ' ' +  self[:last_name]
+    if self[:first_name].present? && self[:last_name].present?
+      fullname = self[:first_name] +  ' ' +  self[:last_name]
+    else
+      fullname = ''
+    end
+    fullname
   end
+
 end

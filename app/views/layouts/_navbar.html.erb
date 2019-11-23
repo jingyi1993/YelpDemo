@@ -19,7 +19,11 @@
             aria-haspopup="true"
             aria-expanded="false"
             style="font-weight: bold; color: white">
-              <%= "Hi, #{@current_user.fullname}" %>
+              <% if @current_user.fullname.present? %>
+                <%= "Hi, #{@current_user.fullname}" %>
+              <% else %>
+                <%= "Hi, User" %>
+              <% end %>
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item"><%= link_to "Edit user", edit_user_registration_path, class: "nav-link" %></a>
